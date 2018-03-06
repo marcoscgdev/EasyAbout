@@ -17,7 +17,7 @@ You can download the **sample apk** [here](https://github.com/marcoscgdev/Licens
 
 | Default | Default Dark | Colored |
 |----------|----------|----------|
-|![Sample App](1)|![Sample App](2)|![Sample App](3)|
+| ![Sample App][1] | ![Sample App][2] | ![Sample App][3] |
 
 ---
 
