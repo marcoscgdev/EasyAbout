@@ -9,17 +9,15 @@ Fully material-designed about fragment for your application.
 
 #### Current release: 1.0.0.
 
-| Default | Default Dark | Colored |
-|----------|----------|----------|
-|![Sample App][1]|![Sample App][2]|![Sample App][1]|
-
 ---
 
 ## Demo:
 
 You can download the **sample apk** [here](https://github.com/marcoscgdev/Licenser/releases/download/1.0.0/app-debug.apk).
 
-<img src="https://raw.githubusercontent.com/marcoscgdev/Licenser/master/device-2018-02-11-161003.png" width="350">
+| Default | Default Dark | Colored |
+|----------|----------|----------|
+|![Sample App](1)|![Sample App](2)|![Sample App](3)|
 
 ---
 
