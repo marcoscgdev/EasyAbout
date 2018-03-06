@@ -42,6 +42,6 @@ Now add the dependency to your app build.gradle file:
 compile 'com.github.marcoscgdev:EasyAbout:1.0.0'
 ```
 
-[1]: screenshots/1.png
-[2]: screenshots/2.png
-[3]: screenshots/3.png
+[1]: https://raw.githubusercontent.com/marcoscgdev/EasyAbout/master/screenshots/1.png
+[2]: https://raw.githubusercontent.com/marcoscgdev/EasyAbout/master/screenshots/2.png
+[3]: https://raw.githubusercontent.com/marcoscgdev/EasyAbout/master/screenshots/3.png
