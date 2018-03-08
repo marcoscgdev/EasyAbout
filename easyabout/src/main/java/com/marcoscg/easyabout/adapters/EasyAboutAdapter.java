@@ -4,13 +4,13 @@ import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 import android.support.v7.widget.AppCompatImageView;
+import android.support.v7.widget.RecyclerView;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.marcoscg.easyabout.R;
@@ -27,74 +27,109 @@ import java.util.List;
  * Created by @MarcosCGdev on 19/02/2018.
  */
 
-public final class EasyAboutAdapter extends ArrayAdapter<AboutItem> {
+public final class EasyAboutAdapter extends
+        RecyclerView.Adapter<EasyAboutAdapter.MyViewHolder> {
 
     private Context context;
     private List<AboutItem> aboutItemList;
 
+    private final int ITEM_TYPE_HEADER = 0;
+    private final int ITEM_TYPE_NORMAL = 1;
+    private final int ITEM_TYPE_PERSON = 2;
+
     public EasyAboutAdapter(@NonNull Context context, List<AboutItem> aboutItemList) {
-        super(context, 0, aboutItemList);
         this.context = context;
         this.aboutItemList = aboutItemList;
     }
 
-    @NonNull
-    @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        AboutItem aboutItem = aboutItemList.get(position);
+    class MyViewHolder extends RecyclerView.ViewHolder {
 
-        if (convertView==null) {
-            int layout;
-            if (aboutItem instanceof HeaderAboutItem)
-                layout = R.layout.ea_header_about_item;
-            else if (aboutItem instanceof NormalAboutItem)
-                layout = R.layout.ea_normal_about_item;
-            else if (aboutItem instanceof PersonAboutItem)
-                layout = R.layout.ea_person_about_item;
-            else layout = R.layout.ea_normal_about_item;
-            convertView = LayoutInflater.from(context).inflate(layout, parent, false);
+        private LinearLayout container;
+        private TextView title, subtitle;
+        private AppCompatImageView icon;
+
+        public MyViewHolder(View view) {
+            super(view);
+            container = (LinearLayout) view.findViewById(R.id.item_container);
+            title = (TextView) view.findViewById(R.id.title);
+            subtitle = (TextView) view.findViewById(R.id.subtitle);
+            icon = (AppCompatImageView) view.findViewById(R.id.icon);
         }
+    }
 
-        TextView title = (TextView) convertView.findViewById(R.id.title);
-        TextView subtitle = (TextView) convertView.findViewById(R.id.subtitle);
-        AppCompatImageView icon = (AppCompatImageView) convertView.findViewById(R.id.icon);
+    @Override
+    public void onBindViewHolder(MyViewHolder holder, int position) {
+        AboutItem aboutItem = aboutItemList.get(position);
 
         int color = ColorUtils.getThemeAttrColor(context, "aboutCardBackground");
         if (color != 0) {
             int primaryColor = ColorUtils.isDark(color) ? getClr(R.color.about_primary_text_color_dark) : getClr(R.color.about_primary_text_color_light);
             int secondaryColor = ColorUtils.isDark(color) ? getClr(R.color.about_secondary_text_color_dark) : getClr(R.color.about_secondary_text_color_light);
 
-            if (icon instanceof IconView)
-                ((IconView) icon).setColor(secondaryColor);
+            if (holder.icon instanceof IconView)
+                ((IconView) holder.icon).setColor(secondaryColor);
 
-            title.setTextColor(primaryColor);
-            subtitle.setTextColor(secondaryColor);
+            holder.title.setTextColor(primaryColor);
+            holder.subtitle.setTextColor(secondaryColor);
         }
 
         if (aboutItem.getTitle()==null)
-            title.setVisibility(View.GONE);
-        else title.setText(aboutItem.getTitle());
+            holder.title.setVisibility(View.GONE);
+        else holder.title.setText(aboutItem.getTitle());
 
         if (aboutItem.getSubtitle()==null)
-            subtitle.setVisibility(View.GONE);
-        else subtitle.setText(aboutItem.getSubtitle());
+            holder.subtitle.setVisibility(View.GONE);
+        else holder.subtitle.setText(aboutItem.getSubtitle());
 
         if (aboutItem.getIcon()==null)
-            icon.setImageDrawable(new ColorDrawable(Color.TRANSPARENT));
-        else icon.setImageDrawable(aboutItem.getIcon());
+            holder.icon.setImageDrawable(new ColorDrawable(Color.TRANSPARENT));
+        else holder.icon.setImageDrawable(aboutItem.getIcon());
 
-        convertView.setOnClickListener(aboutItem.getOnClickListener());
-        convertView.setOnLongClickListener(aboutItem.getOnLongClickListener());
+        holder.container.setOnClickListener(aboutItem.getOnClickListener());
+        holder.container.setOnLongClickListener(aboutItem.getOnLongClickListener());
 
         TypedValue typedValue = new TypedValue();
-        getContext().getTheme().resolveAttribute(R.attr.selectableItemBackground, typedValue, true);
+        context.getTheme().resolveAttribute(R.attr.selectableItemBackground, typedValue, true);
         if (aboutItem.getOnClickListener()!=null || aboutItem.getOnLongClickListener()!=null)
-            convertView.setBackgroundResource(typedValue.resourceId);
+            holder.container.setBackgroundResource(typedValue.resourceId);
+    }
 
-        return convertView;
+    @Override
+    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        int layout;
+
+        if (viewType == ITEM_TYPE_HEADER)
+            layout = R.layout.ea_header_about_item;
+        else if (viewType == ITEM_TYPE_NORMAL)
+            layout = R.layout.ea_normal_about_item;
+        else if (viewType == ITEM_TYPE_PERSON)
+            layout = R.layout.ea_person_about_item;
+        else layout = R.layout.ea_normal_about_item;
+
+        View v = LayoutInflater.from(parent.getContext()).inflate(layout, parent, false);
+        return new MyViewHolder(v);
+    }
+
+    @Override
+    public int getItemViewType(int position) {
+        AboutItem aboutItem = aboutItemList.get(position);
+
+        if (aboutItem instanceof HeaderAboutItem)
+            return ITEM_TYPE_HEADER;
+        else if (aboutItem instanceof NormalAboutItem)
+            return ITEM_TYPE_NORMAL;
+        else if (aboutItem instanceof PersonAboutItem)
+            return ITEM_TYPE_PERSON;
+        else return ITEM_TYPE_NORMAL;
+    }
+
+    @Override
+    public int getItemCount() {
+        return aboutItemList.size();
     }
 
     private int getClr(int colorRes) {
         return context.getResources().getColor(colorRes);
     }
+
 }
