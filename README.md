@@ -7,13 +7,13 @@ Fully material-designed about fragment for your application.
 
 ## Releases:
 
-#### Current release: 1.0.0.
+#### Current release: 1.0.1.
 
 ---
 
 ## Demo:
 
-You can download the **sample apk** [here](https://github.com/marcoscgdev/Licenser/releases/download/1.0.0/app-debug.apk).
+You can download the **sample apk** [here](https://github.com/marcoscgdev/Licenser/releases/download/1.0.1/app-debug.apk).
 
 | Default | Default Dark | Colored |
 |----------|----------|----------|
@@ -39,7 +39,7 @@ allprojects {
 Now add the dependency to your app build.gradle file:
 
 ```
-compile 'com.github.marcoscgdev:EasyAbout:1.0.0'
+compile 'com.github.marcoscgdev:EasyAbout:1.0.1'
 ```
 
 [1]: https://raw.githubusercontent.com/marcoscgdev/EasyAbout/master/screenshots/1.png
