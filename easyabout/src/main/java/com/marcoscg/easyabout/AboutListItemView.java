@@ -46,6 +46,7 @@ final class AboutListItemView extends RelativeLayout {
         aboutItemList = new ArrayList<>();
         easyAboutAdapter = new EasyAboutAdapter(context, aboutItemList);
         recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        recyclerView.setNestedScrollingEnabled(false);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(easyAboutAdapter);

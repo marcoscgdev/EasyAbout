@@ -31,17 +31,6 @@
                 style="@style/TextAppearance.AppCompat.Body2"
                 android:textColor="?android:attr/textColorSecondary"/>
 
-            <!--<ListView
-                android:id="@+id/list_view"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:drawSelectorOnTop="false"
-                android:scrollbars="none"
-                android:fadingEdge="none"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:divider="@null"/>-->
-
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/recycler_view"
                 android:layout_width="match_parent"
