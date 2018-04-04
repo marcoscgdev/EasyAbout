@@ -7,15 +7,14 @@
     android:minHeight="48dp"
     android:gravity="center_vertical"
     android:orientation="horizontal"
-    android:paddingTop="8dp"
-    android:paddingLeft="16dp"
-    android:paddingRight="16dp"
-    android:paddingBottom="8dp">
+    android:background="?selectableItemBackground">
 
     <com.marcoscg.easyabout.views.IconView
         android:id="@+id/icon"
         android:layout_width="24dp"
         android:layout_height="24dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
         android:adjustViewBounds="false"
         android:cropToPadding="false"
         android:scaleType="centerInside"/>
@@ -25,6 +24,10 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="32dp"
         android:layout_marginStart="32dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp"
         android:orientation="vertical">
 
         <TextView

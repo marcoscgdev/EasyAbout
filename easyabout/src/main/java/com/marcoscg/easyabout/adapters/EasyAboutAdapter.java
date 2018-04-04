@@ -6,7 +6,6 @@ import android.graphics.drawable.ColorDrawable;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.AppCompatImageView;
 import android.support.v7.widget.RecyclerView;
-import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -85,13 +84,10 @@ public final class EasyAboutAdapter extends
             holder.icon.setImageDrawable(new ColorDrawable(Color.TRANSPARENT));
         else holder.icon.setImageDrawable(aboutItem.getIcon());
 
-        holder.container.setOnClickListener(aboutItem.getOnClickListener());
-        holder.container.setOnLongClickListener(aboutItem.getOnLongClickListener());
-
-        TypedValue typedValue = new TypedValue();
-        context.getTheme().resolveAttribute(R.attr.selectableItemBackground, typedValue, true);
-        if (aboutItem.getOnClickListener()!=null || aboutItem.getOnLongClickListener()!=null)
-            holder.container.setBackgroundResource(typedValue.resourceId);
+        if (aboutItem.getOnClickListener()!=null)
+            holder.container.setOnClickListener(aboutItem.getOnClickListener());
+        if (aboutItem.getOnLongClickListener()!=null)
+            holder.container.setOnLongClickListener(aboutItem.getOnLongClickListener());
     }
 
     @Override
