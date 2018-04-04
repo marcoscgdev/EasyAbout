@@ -7,7 +7,7 @@ Fully material-designed about fragment for your application.
 
 ## Releases:
 
-#### Current release: 1.0.2.
+#### Current release: 1.0.3.
 
 ---
 
@@ -39,7 +39,7 @@ allprojects {
 Now add the dependency to your app build.gradle file:
 
 ```
-compile 'com.github.marcoscgdev:EasyAbout:1.0.2'
+compile 'com.github.marcoscgdev:EasyAbout:1.0.3'
 ```
 
 [1]: https://raw.githubusercontent.com/marcoscgdev/EasyAbout/master/screenshots/1.png
