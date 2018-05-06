@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatDelegate;
+import android.support.v4.widget.NestedScrollView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -24,6 +25,7 @@ public abstract class EasyAboutFragment extends Fragment {
     private View rootView;
     private List<AboutCard> aboutCardList;
     private LinearLayout mainView;
+    private NestedScrollView scrollView;
 
     static {
         AppCompatDelegate.setCompatVectorFromResourcesEnabled(true);
@@ -36,6 +38,7 @@ public abstract class EasyAboutFragment extends Fragment {
         aboutCardList = new ArrayList<>();
 
         mainView = (LinearLayout) rootView.findViewById(R.id.main_view);
+        scrollView = (NestedScrollView) rootView.findViewById(R.id.scroll_view);
 
         configureFragment(getContext(), rootView);
 
@@ -50,5 +53,9 @@ public abstract class EasyAboutFragment extends Fragment {
             aboutItemView.addItem(aboutItem);
         }
         mainView.addView(aboutItemView);
+    }
+    
+    public NestedScrollView getScrollView() {
+        return scrollView;
     }
 }
