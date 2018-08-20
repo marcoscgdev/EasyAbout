@@ -40,12 +40,12 @@ public abstract class EasyAboutFragment extends Fragment {
         mainView = (LinearLayout) rootView.findViewById(R.id.main_view);
         scrollView = (NestedScrollView) rootView.findViewById(R.id.scroll_view);
 
-        configureFragment(getContext(), rootView);
+        configureFragment(getContext(), rootView, savedInstanceState);
 
         return rootView;
     }
 
-    protected abstract void configureFragment(Context context, View rootView);
+    protected abstract void configureFragment(Context context, View rootView, Bundle savedInstanceState);
 
     public void addCard(AboutCard aboutCard) {
         AboutListItemView aboutItemView = new AboutListItemView(getContext(), aboutCard.getTitle(), aboutCard.getTitleColor());
