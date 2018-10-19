@@ -127,13 +127,16 @@ PersonAboutItem personAboutItem = new PersonAboutItem.Builder(context)
 You can add cards with the _addCard(AboutCard aboutCard);_ method (inside the configureFragment function of the fragment)
 
 ```java
-NormalAboutItem normalAboutItem = new NormalAboutItem.Builder(context)
-        .setTitle("Item title")
-        .setSubtitle("Item subtitle")
-        .setIcon(R.drawable.ic_info_outline_black_24dp)
+AboutCard aboutCard = new AboutCard.Builder(context)
+        .setTitle("Card title") // It can also be passed as a string resource
+        .setTitleColorRes(R.color.colorAccent) // You can also use setTitleColor(int color);
+        .addItem(personAboutItem)
+        .addItem(normalAboutItem)
         .build();
         
-addCard(normalAboutItem);
+addCard(aboutCard);
+addCard(anotherCard);
+addCard(contactCard);
 ```
 
 ### Sample fragment
