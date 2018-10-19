@@ -1,6 +1,7 @@
 package com.marcoscg.easyaboutsample;
 
 import android.content.Context;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
@@ -17,7 +18,7 @@ import com.marcoscg.easyabout.items.PersonAboutItem;
 public class AboutFragment extends EasyAboutFragment {
 
     @Override
-    protected void configureFragment(final Context context, View rootView) {
+    protected void configureFragment(final Context context, View rootView, Bundle savedInstanceState) {
         addCard(new AboutCard.Builder(context)
                 .addItem(AboutItemBuilder.generateAppTitleItem(context)
                         .setSubtitle("by @MarcosCGdev."))
