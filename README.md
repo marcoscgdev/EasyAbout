@@ -50,7 +50,7 @@ Your about fragment **must extend** from _EasyAboutFragment_
 public class AboutFragment extends EasyAboutFragment {
 
     @Override
-    protected void configureFragment(final Context context, View rootView, Bundle savedInstanceState) {
+    protected void configureFragment(Context context, View rootView, Bundle savedInstanceState) {
         // add cards here
     }
 }
