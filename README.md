@@ -1,5 +1,5 @@
 # EasyAbout
-Fully material-designed about fragment for your application.
+A fully material-designed about fragment for your application.
 
 ---
 
@@ -27,7 +27,7 @@ You can download the **sample apk** [here](https://github.com/marcoscgdev/Licens
 
 Add this to your root *build.gradle* file:
 
-```
+```groove
 allprojects {
     repositories {
         ...
@@ -38,7 +38,7 @@ allprojects {
 
 Now add the dependency to your app build.gradle file:
 
-```
+```groove
 implementation 'com.github.marcoscgdev:EasyAbout:1.0.5'
 ```
 
