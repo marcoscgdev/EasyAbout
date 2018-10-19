@@ -7,6 +7,8 @@ Fully material-designed about fragment for your application.
 
 #### Current release: 1.0.5.
 
+You can see all the library releases [here](https://github.com/marcoscgdev/EasyAbout/releases).
+
 ---
 
 ## Demo:
