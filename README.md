@@ -75,6 +75,8 @@ AboutCard aboutCard = new AboutCard.Builder(context)
 
 #### Header item
 
+![Header item](https://raw.githubusercontent.com/marcoscgdev/EasyAbout/master/screenshots/header_item.png)
+
 ```java
 HeaderAboutItem headerAboutItem = new HeaderAboutItem.Builder(context)
         .setTitle(R.string.app_name) // It can also be passed as a string value
@@ -84,6 +86,8 @@ HeaderAboutItem headerAboutItem = new HeaderAboutItem.Builder(context)
 ```
 
 #### Normal item
+
+![Normal item](https://raw.githubusercontent.com/marcoscgdev/EasyAbout/master/screenshots/normal_item.png)
 
 ```java
 NormalAboutItem normalAboutItem = new NormalAboutItem.Builder(context)
@@ -107,6 +111,8 @@ NormalAboutItem normalAboutItem = new NormalAboutItem.Builder(context)
 ```
 
 #### Person item
+
+![Person item](https://raw.githubusercontent.com/marcoscgdev/EasyAbout/master/screenshots/person_item.png)
 
 ```java
 PersonAboutItem personAboutItem = new PersonAboutItem.Builder(context)
