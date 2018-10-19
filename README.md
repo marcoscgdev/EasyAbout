@@ -1,13 +1,11 @@
 # EasyAbout
 Fully material-designed about fragment for your application.
 
-**More info coming soon...**
-
 ---
 
 ## Releases:
 
-#### Current release: 1.0.4.
+#### Current release: 1.0.5.
 
 ---
 
@@ -39,7 +37,7 @@ allprojects {
 Now add the dependency to your app build.gradle file:
 
 ```
-implementation 'com.github.marcoscgdev:EasyAbout:1.0.4'
+implementation 'com.github.marcoscgdev:EasyAbout:1.0.5'
 ```
 
 ### Create the fragment
@@ -50,7 +48,7 @@ Your about fragment **must extend** from _EasyAboutFragment_
 public class AboutFragment extends EasyAboutFragment {
 
     @Override
-    protected void configureFragment(final Context context, View rootView) {
+    protected void configureFragment(final Context context, View rootView, Bundle savedInstanceState) {
         // add cards here
     }
 }
@@ -191,6 +189,37 @@ Simply add this to your app theme. Replace _@color/colorPrimary_ with your desir
 
 ```xml
 <item name="aboutCardBackground">@color/colorPrimary</item>
+```
+
+---
+>See the *sample project* to clarify any queries you may have.
+
+---
+
+## License
+
+```
+MIT License
+
+Copyright (c) 2018 Marcos Calvo García
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
 ```
 
 [1]: https://raw.githubusercontent.com/marcoscgdev/EasyAbout/master/screenshots/1.png
