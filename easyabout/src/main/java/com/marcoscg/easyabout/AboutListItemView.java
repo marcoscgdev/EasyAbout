@@ -22,7 +22,6 @@ import java.util.List;
 
 final class AboutListItemView extends RelativeLayout {
 
-    private RecyclerView recyclerView;
     private List<AboutItem> aboutItemList;
     private EasyAboutAdapter easyAboutAdapter;
 
@@ -45,12 +44,12 @@ final class AboutListItemView extends RelativeLayout {
         inflate(getContext(), R.layout.ea_card_list, this);
         aboutItemList = new ArrayList<>();
         easyAboutAdapter = new EasyAboutAdapter(context, aboutItemList);
-        recyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        RecyclerView recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setNestedScrollingEnabled(false);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(easyAboutAdapter);
-        TextView titleTv = (TextView) findViewById(R.id.card_title);
+        TextView titleTv = findViewById(R.id.card_title);
         if (titleColor==0)
             titleColor = ColorUtils.getThemeAccentColor(context);
         titleTv.setTextColor(titleColor);
@@ -65,6 +64,11 @@ final class AboutListItemView extends RelativeLayout {
 
     void addItem(AboutItem aboutItem) {
         aboutItemList.add(aboutItem);
+        easyAboutAdapter.notifyDataSetChanged();
+    }
+
+    void addItems(List<AboutItem> aboutItems) {
+        aboutItemList.addAll(aboutItems);
         easyAboutAdapter.notifyDataSetChanged();
     }
 
