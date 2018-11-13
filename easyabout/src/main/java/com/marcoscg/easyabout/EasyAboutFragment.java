@@ -37,8 +37,8 @@ public abstract class EasyAboutFragment extends Fragment {
 
         aboutCardList = new ArrayList<>();
 
-        mainView = (LinearLayout) rootView.findViewById(R.id.main_view);
-        scrollView = (NestedScrollView) rootView.findViewById(R.id.scroll_view);
+        mainView = rootView.findViewById(R.id.main_view);
+        scrollView = rootView.findViewById(R.id.scroll_view);
 
         configureFragment(getContext(), rootView, savedInstanceState);
 
@@ -49,9 +49,7 @@ public abstract class EasyAboutFragment extends Fragment {
 
     public void addCard(AboutCard aboutCard) {
         AboutListItemView aboutItemView = new AboutListItemView(getContext(), aboutCard.getTitle(), aboutCard.getTitleColor());
-        for (AboutItem aboutItem : aboutCard.getAboutItemList()) {
-            aboutItemView.addItem(aboutItem);
-        }
+        aboutItemView.addItems(aboutCard.getAboutItemList());
         mainView.addView(aboutItemView);
     }
     

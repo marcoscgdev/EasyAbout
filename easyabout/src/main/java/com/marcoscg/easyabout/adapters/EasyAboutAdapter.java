@@ -26,8 +26,7 @@ import java.util.List;
  * Created by @MarcosCGdev on 19/02/2018.
  */
 
-public final class EasyAboutAdapter extends
-        RecyclerView.Adapter<EasyAboutAdapter.MyViewHolder> {
+public final class EasyAboutAdapter extends RecyclerView.Adapter<EasyAboutAdapter.MyViewHolder> {
 
     private Context context;
     private List<AboutItem> aboutItemList;
@@ -47,18 +46,18 @@ public final class EasyAboutAdapter extends
         private TextView title, subtitle;
         private AppCompatImageView icon;
 
-        public MyViewHolder(View view) {
+        MyViewHolder(View view) {
             super(view);
-            container = (LinearLayout) view.findViewById(R.id.item_container);
-            title = (TextView) view.findViewById(R.id.title);
-            subtitle = (TextView) view.findViewById(R.id.subtitle);
-            icon = (AppCompatImageView) view.findViewById(R.id.icon);
+            container = view.findViewById(R.id.item_container);
+            title = view.findViewById(R.id.title);
+            subtitle = view.findViewById(R.id.subtitle);
+            icon = view.findViewById(R.id.icon);
         }
     }
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        AboutItem aboutItem = aboutItemList.get(position);
+        AboutItem aboutItem = aboutItemList.get(holder.getAdapterPosition());
 
         int color = ColorUtils.getThemeAttrColor(context, "aboutCardBackground");
         if (color != 0) {
