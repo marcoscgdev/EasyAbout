@@ -5,7 +5,7 @@ A fully material-designed about fragment for your application.
 
 ## Releases:
 
-#### Current release: 1.0.5.
+#### Current release: 1.0.6.
 
 You can see all the library releases [here](https://github.com/marcoscgdev/EasyAbout/releases).
 
@@ -39,7 +39,7 @@ allprojects {
 Now add the dependency to your app build.gradle file:
 
 ```groove
-implementation 'com.github.marcoscgdev:EasyAbout:1.0.5'
+implementation 'com.github.marcoscgdev:EasyAbout:1.0.6'
 ```
 
 ### Create the fragment
