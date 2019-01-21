@@ -17,7 +17,6 @@ ext.gradlePlugins = [
     mavenGradle: "com.github.dcendents:android-maven-gradle-plugin:$versions.mavenGradlePlugin",
 ]
 ext.libraries = [
-
     supportAppCompat : "com.android.support:appcompat-v7:$versions.supportLibraryVersion",
     supportRecyclerView : "com.android.support:recyclerview-v7:$versions.supportLibraryVersion",
     supportCardView : "com.android.support:cardview-v7:$versions.supportLibraryVersion",
