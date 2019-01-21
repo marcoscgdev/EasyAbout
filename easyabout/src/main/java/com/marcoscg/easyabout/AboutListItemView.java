@@ -1,6 +1,7 @@
 package com.marcoscg.easyabout;
 
 import android.content.Context;
+import android.support.v4.view.ViewCompat;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
@@ -46,6 +47,7 @@ final class AboutListItemView extends RelativeLayout {
         easyAboutAdapter = new EasyAboutAdapter(context, aboutItemList);
         RecyclerView recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setNestedScrollingEnabled(false);
+        ViewCompat.setNestedScrollingEnabled(recyclerView, false);
         recyclerView.setLayoutManager(new LinearLayoutManager(context));
         recyclerView.setItemAnimator(new DefaultItemAnimator());
         recyclerView.setAdapter(easyAboutAdapter);
